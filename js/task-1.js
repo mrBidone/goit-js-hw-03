@@ -1,17 +1,20 @@
-function makeTransaction(quantity, pricePerDroid) {
-    const totalPrice = quantity * pricePerDroid;
-    const message = `You ordered ${quantity} droids worth ${totalPrice} credits!`;
-    return message;
+// Напиши функцію slugify(title), яка приймає заголовок статті, параметр title і 
+// повертає slug, створений із цього рядка.
+// Значенням параметра title будуть рядки, слова яких розділені лише пробілами.
+// Усі символи slug повинні бути в нижньому регістрі.
+// Усі слова slug повинні бути розділені тире.
+// Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи.
+
+console.log("task-1 ==================================");
+
+function slugify(title) {
+
+    let slugString = title.toLowerCase().replaceAll(" ", "-");
+
+    return slugString;
 }
 
-console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
-
-// function makeTransaction (quantity, pricePerDroid) {
-//     return `You ordered ${quantity} droids worth ${quantity * pricePerDroid} credits!`;
-// }
-
-// console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
-// console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
-// console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
+console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
+console.log(slugify("English for developer")); // "english-for-developer"
+console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
+console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
